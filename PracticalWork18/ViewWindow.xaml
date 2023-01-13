@@ -1,0 +1,46 @@
+﻿<Window x:Class="PracticalWork18.ViewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticalWork18"
+        mc:Ignorable="d"
+        Title="Редактировать запись" Height="400" Width="400" ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="0.4*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Группа</TextBlock>
+            <TextBox IsReadOnly="True" x:Name="GroupId" Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">ФИО</TextBlock>
+            <TextBox x:Name="FullName" IsReadOnly="True" Margin="20, 5" HorizontalAlignment="Left" Width="180"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Пол</TextBlock>
+            <TextBox x:Name="Gender" IsReadOnly="True" Margin="20, 5" HorizontalAlignment="Left" Width="100"/>
+
+            <TextBlock Margin="20, 15, 0, 5" HorizontalAlignment="Left">Семейное положение</TextBlock>
+            <TextBox x:Name="MaritalStatus" IsReadOnly="True" Margin="20, 5" HorizontalAlignment="Left" Width="120"/>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Center" Grid.Column="1">Оценки</TextBlock>
+        <StackPanel Grid.Column="1" Margin="0, 30, 0, 0" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Экзамен 1</TextBlock>
+            <TextBox x:Name="exam1" IsReadOnly="True" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Экзамен 2</TextBlock>
+            <TextBox x:Name="exam2" IsReadOnly="True" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Экзамен 3</TextBlock>
+            <TextBox x:Name="exam3" IsReadOnly="True" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Экзамен 4</TextBlock>
+            <TextBox x:Name="exam4" IsReadOnly="True" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Экзамен 5</TextBlock>
+            <TextBox x:Name="exam5" IsReadOnly="True" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+        </StackPanel>
+    </Grid>
+</Window>

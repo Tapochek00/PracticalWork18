@@ -1,0 +1,38 @@
+﻿<Window x:Class="PracticalWork18.Update"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticalWork18"
+        mc:Ignorable="d"
+        Title="Найти и изменить" Height="360" Width="400" ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Center" Margin="0, 20, 0, 0">Искать по:</TextBlock>
+            <ComboBox x:Name="setSearch" Margin="0, 10, 0, 0" Width="120">
+                <ComboBoxItem IsSelected="True">ФИО</ComboBoxItem>
+                <ComboBoxItem>Группа</ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock HorizontalAlignment="Center" Margin="0, 20, 0, 10">Введите запрос</TextBlock>
+            <TextBox x:Name="searchText" VerticalAlignment="Top" HorizontalAlignment="Center" Width="160"></TextBox>
+
+
+            <TextBlock HorizontalAlignment="Center" Margin="0, 20, 0, 10">Изменить:</TextBlock>
+            <ComboBox x:Name="updateParam" HorizontalAlignment="Center">
+                <ComboBoxItem IsSelected="True" Width="auto">Группа</ComboBoxItem>
+                <ComboBoxItem>Оценка за экзамен 1</ComboBoxItem>
+                <ComboBoxItem>Оценка за экзамен 2</ComboBoxItem>
+                <ComboBoxItem>Оценка за экзамен 3</ComboBoxItem>
+                <ComboBoxItem>Оценка за экзамен 4</ComboBoxItem>
+                <ComboBoxItem>Оценка за экзамен 5</ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock HorizontalAlignment="Center" Margin="0, 20, 0, 0">Введите новое значение:</TextBlock>
+            <TextBox x:Name="changeText" HorizontalAlignment="Center" Margin="0, 10, 0, 0" Width="100"></TextBox>
+
+            <Button x:Name="Search" IsDefault="True" HorizontalAlignment="Center" Margin="0, 20, 0, 0" Content="Найти и изменить" Padding="5" Width="180" Click="Search_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
