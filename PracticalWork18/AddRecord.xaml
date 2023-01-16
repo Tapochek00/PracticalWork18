@@ -20,13 +20,12 @@
             </ComboBox>
 
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">ФИО</TextBlock>
-            <TextBox x:Name="FullName" Margin="20, 5" HorizontalAlignment="Left" Width="180"/>
+            <TextBox x:Name="FullName" Margin="20, 5" HorizontalAlignment="Left" Width="180" MaxLength="60"/>
 
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Пол</TextBlock>
             <ComboBox x:Name="Gender" Margin="20, 5" HorizontalAlignment="Left" Width="auto">
                 <ComboBoxItem IsSelected="True">Женский</ComboBoxItem>
                 <ComboBoxItem>Мужской</ComboBoxItem>
-                <ComboBoxItem>Ламинат</ComboBoxItem>
             </ComboBox>
 
             <TextBlock Margin="20, 15, 0, 5" HorizontalAlignment="Left">Семейное положение</TextBlock>

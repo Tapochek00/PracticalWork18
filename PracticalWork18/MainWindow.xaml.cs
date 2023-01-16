@@ -155,5 +155,18 @@ namespace PracticalWork18
             db.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             DataGrid1.Items.Refresh();
         }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Практическая работа № 18 - Создание запросов к БД\n\nВариант 14\n\n" +
+                "Результаты сессии на первом курсе кафедры ВТ. База данных должна содержать " +
+                "следующую информацию: индекс группы, фамилию, имя, отчество студента, пол " +
+                "студента, семейное положение и оценки по пяти экзаменам.\n\nвыполнила Дунаева М.И. группа ИСП-31");
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

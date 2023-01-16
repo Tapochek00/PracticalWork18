@@ -32,17 +32,21 @@ namespace PracticalWork18
                 char exam = updateParam.Text.ElementAt(updateParam.Text.Length - 1);
                 if (setSearch.Text == "Группа")
                 {
-                    if (updateParam.Text == "Группа")
-                        db.Database.ExecuteSqlCommand("UPDATE Finals " +
-                                                      $"SET GroupId='{changeText.Text}' " +
-                                                      $"WHERE GroupId='{searchText.Text}'");
-
-                    else
+                    if (changeText.Text.Length <= 4)
                     {
-                        db.Database.ExecuteSqlCommand("UPDATE Finals " +
-                                                      $"SET Exam{exam}='{changeText.Text}' " +
-                                                      $"WHERE GroupId='{searchText.Text}'");
+                        if (updateParam.Text == "Группа")
+                            db.Database.ExecuteSqlCommand("UPDATE Finals " +
+                                                          $"SET GroupId='{changeText.Text}' " +
+                                                          $"WHERE GroupId='{searchText.Text}'");
+
+                        else
+                        {
+                            db.Database.ExecuteSqlCommand("UPDATE Finals " +
+                                                          $"SET Exam{exam}='{changeText.Text}' " +
+                                                          $"WHERE GroupId='{searchText.Text}'");
+                        }
                     }
+                    else MessageBox.Show("Длина превышает допустимое значение");
                 }
                 else
                 {
@@ -53,9 +57,13 @@ namespace PracticalWork18
 
                     else
                     {
-                        db.Database.ExecuteSqlCommand("UPDATE Finals " +
+                        if (changeText.Text.Length == 1)
+                        {
+                            db.Database.ExecuteSqlCommand("UPDATE Finals " +
                                                       $"SET Exam{exam}='{changeText.Text}' " +
                                                       $"WHERE FullName='{searchText.Text}'");
+                        }
+                        else MessageBox.Show("Длина превышает допустимое значение");
                     }
                 }
                 db.SaveChanges();

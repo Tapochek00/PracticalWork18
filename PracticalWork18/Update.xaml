@@ -16,7 +16,7 @@
             </ComboBox>
 
             <TextBlock HorizontalAlignment="Center" Margin="0, 20, 0, 10">Введите запрос</TextBlock>
-            <TextBox x:Name="searchText" VerticalAlignment="Top" HorizontalAlignment="Center" Width="160"></TextBox>
+            <TextBox x:Name="searchText" VerticalAlignment="Top" HorizontalAlignment="Center" MaxLength="60" Width="160"></TextBox>
 
 
             <TextBlock HorizontalAlignment="Center" Margin="0, 20, 0, 10">Изменить:</TextBlock>

@@ -12,7 +12,21 @@
             <RowDefinition Height="9*"/>
             <RowDefinition Height="5.5*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="DataGrid1" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="0" AutoGenerateColumns="False">
+        <Menu Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <MenuItem Header="Таблица">
+                <MenuItem Header="Добавить запись" Click="Add_Click"></MenuItem>
+                <MenuItem Header="Редактировать запись" Click="Edit_Click"></MenuItem>
+                <MenuItem Header="Просмотр записи" Click="View_Click"></MenuItem>
+                <MenuItem Header="Удалить запись" Click="Delete_Click"></MenuItem>
+                <MenuItem Header="Фильтр" Click="Filter_Click"></MenuItem>
+                <MenuItem Header="Найти и заменить" Click="Update_Click"></MenuItem>
+                <MenuItem Header="Найти и удалить" Click="FindAndDelete_Click"></MenuItem>
+                <MenuItem Header="Сброс" Click="Reset_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="О программе" Click="About_Click"></MenuItem>
+            <MenuItem Header="Выход" Click="Exit_Click"></MenuItem>
+        </Menu>
+        <DataGrid x:Name="DataGrid1" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="0" Margin="0, 20, 0, 0">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="2*" Header="№" Binding="{Binding Id}"/>
                 <DataGridTextColumn Width="4*" Header="Группа" Binding="{Binding GroupId}"/>
@@ -32,7 +46,7 @@
             <Button x:Name="View" Content="Просмотр" Margin="15" Padding="7" Click="View_Click"/>
             <Button x:Name="Delete" Content="Удалить запись" Margin="15" Padding="7" Click="Delete_Click"/>
             <Button x:Name="Filter" Content="Фильтр" Margin="15" Padding="7" Click="Filter_Click"/>
-            <Button x:Name="Update" Content="Найти и изменить" Margin="15" Padding="7" Click="Update_Click"/>
+            <Button x:Name="Update" Content="Найти и заменить" Margin="15" Padding="7" Click="Update_Click"/>
             <Button x:Name="FindAndDelete" Content="Найти и удалить" Margin="15" Padding="7" Click="FindAndDelete_Click"/>
             <Button x:Name="Reset" Content="Сброс" Margin="15" Padding="7" Click="Reset_Click"/>
         </StackPanel>
