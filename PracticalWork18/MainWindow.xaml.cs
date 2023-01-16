@@ -168,5 +168,21 @@ namespace PracticalWork18
         {
             this.Close();
         }
+
+        private void Window_Initialized(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            log.ShowDialog();
+            if (!Data.Login) Close();
+            if (Data.Right != "Администратор")
+            {
+                Add.IsEnabled = false;
+                Edit.IsEnabled = false;
+                Delete.IsEnabled = false;
+                Update.IsEnabled = false;
+                FindAndDelete.IsEnabled = false;
+            }
+            mainWin.Title = $"{Data.Surname} {Data.Name} {Data.Patronymic} - {Data.Right}";
+        }
     }
 }

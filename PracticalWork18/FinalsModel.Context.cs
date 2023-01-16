@@ -26,12 +26,15 @@ namespace PracticalWork18
         }
     
         public virtual DbSet<Finals> Finals { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<User> User { get; set; }
 
         private static StudentEntities context;
 
         public static StudentEntities GetContext()
         {
-            if (context == null) context = new StudentEntities();
+            if (context == null)
+                context = new StudentEntities();
             return context;
         }
     }

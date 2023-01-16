@@ -32,7 +32,7 @@ namespace PracticalWork18
                 char exam = updateParam.Text.ElementAt(updateParam.Text.Length - 1);
                 if (setSearch.Text == "Группа")
                 {
-                    if (changeText.Text.Length <= 4)
+                    if (changeText.Text.Length <= 5)
                     {
                         if (updateParam.Text == "Группа")
                             db.Database.ExecuteSqlCommand("UPDATE Finals " +
