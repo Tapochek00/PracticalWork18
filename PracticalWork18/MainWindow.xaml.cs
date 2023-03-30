@@ -117,13 +117,17 @@ namespace PracticalWork18
                                         where p.GroupId.StartsWith(Data.FilterText)
                                         select p;
                 }
-                else if (Data.FilterParams == "Содержат текст")
-                    filterResult = from p in db.Finals
-                                   where p.FullName.Contains(Data.FilterText)
-                                   select p;
-                else filterResult = from p in db.Finals
-                                    where p.FullName.StartsWith(Data.FilterText)
-                                    select p;
+                else if (Data.SetFilter == "ФИО")
+                {
+                    if (Data.FilterParams == "Содержат текст")
+                        filterResult = from p in db.Finals
+                                       where p.FullName.Contains(Data.FilterText)
+                                       select p;
+                    else filterResult = from p in db.Finals
+                                        where p.FullName.StartsWith(Data.FilterText)
+                                        select p;
+                }
+                else if (Data.SetFilter.Remove(Data.SetFilter.Length-2, 2) == "Оценка за экзамен")
 
                 DataGrid1.ItemsSource = filterResult.ToList();
             }
