@@ -26,11 +26,17 @@ namespace PracticalWork18
 
         private void Filter_Click(object sender, object e)
         {
-            Data.SetFilter = setSearch.Text;
-            Data.FilterText = searchText.Text;
-            Data.FilterParams = filterParams.Text;
+            ComboBox combo;
+            Data.SetFilter = (setSearch.SelectedItem as ComboBoxItem).Content.ToString();
+            Data.FilterParams = (filterParams.SelectedItem as ComboBoxItem).Content.ToString();
+            if (Data.SetFilter.Remove(Data.SetFilter.Length - 2, 2) == "Оценка за экзамен")
+            {
+                combo = (ComboBox)searchPlace.Children[0];
+                Data.FilterText = (combo.SelectedItem as ComboBoxItem).Content.ToString();
+            }
+            else Data.FilterText = searchText.Text;
 
-            this.Close();
+            Close();
         }
 
         private void setSearch_SelectionChanged(object sender, SelectionChangedEventArgs e)

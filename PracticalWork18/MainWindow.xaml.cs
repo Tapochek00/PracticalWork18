@@ -102,7 +102,6 @@ namespace PracticalWork18
             FilterWindow filt = new FilterWindow();
             filt.Owner = this;
             filt.ShowDialog();
-
             try
             {
                 var filterResult = from p in db.Finals
@@ -128,6 +127,102 @@ namespace PracticalWork18
                                         select p;
                 }
                 else if (Data.SetFilter.Remove(Data.SetFilter.Length-2, 2) == "Оценка за экзамен")
+                {
+                    int examId = Data.SetFilter[17];
+                    MessageBox.Show(examId.ToString());
+                    if (Data.FilterParams == "Равны") 
+                    {
+                        switch (examId)
+                        {
+                            case 1:
+                                filterResult = from p in db.Finals
+                                               where p.Exam1 == Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                MessageBox.Show("fuck");
+                                break;
+                            case 2:
+                                filterResult = from p in db.Finals
+                                               where p.Exam2 == Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                            case 3:
+                                filterResult = from p in db.Finals
+                                               where p.Exam3 == Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                            case 4:
+                                filterResult = from p in db.Finals
+                                               where p.Exam4 == Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                            case 5:
+                                filterResult = from p in db.Finals
+                                               where p.Exam5 == Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                        } 
+                    }
+                    else if (Data.FilterParams == "Больше, чем")
+                    {
+                        switch (examId)
+                        {
+                            case 1:
+                                filterResult = from p in db.Finals
+                                               where p.Exam1 > Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                            case 2:
+                                filterResult = from p in db.Finals
+                                               where p.Exam2 > Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                            case 3:
+                                filterResult = from p in db.Finals
+                                               where p.Exam3 > Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                            case 4:
+                                filterResult = from p in db.Finals
+                                               where p.Exam4 > Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                            case 5:
+                                filterResult = from p in db.Finals
+                                               where p.Exam5 > Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                        }
+                    }
+                    else
+                        switch (examId)
+                        {
+                            case 1:
+                                filterResult = from p in db.Finals
+                                               where p.Exam1 > Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                            case 2:
+                                filterResult = from p in db.Finals
+                                               where p.Exam2 > Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                            case 3:
+                                filterResult = from p in db.Finals
+                                               where p.Exam3 > Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                            case 4:
+                                filterResult = from p in db.Finals
+                                               where p.Exam4 > Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                            case 5:
+                                filterResult = from p in db.Finals
+                                               where p.Exam5 > Convert.ToInt32(Data.FilterText)
+                                               select p;
+                                break;
+                        }
+                }
 
                 DataGrid1.ItemsSource = filterResult.ToList();
             }
