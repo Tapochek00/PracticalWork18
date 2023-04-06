@@ -126,38 +126,37 @@ namespace PracticalWork18
                                         where p.FullName.StartsWith(Data.FilterText)
                                         select p;
                 }
-                else if (Data.SetFilter.Remove(Data.SetFilter.Length-2, '2') == "Оценка за экзамен")
+                else if (Data.SetFilter.Remove(Data.SetFilter.Length-2, 2) == "Оценка за экзамен")
                 {
-                    char examId = Data.SetFilter[Data.SetFilter.Length - 1];
-                    MessageBox.Show(examId.ToString());
+                    string examId = Data.SetFilter.Substring(Data.SetFilter.Length - 1);
+                    int search = Convert.ToInt32(Data.FilterText);
                     if (Data.FilterParams == "Равны") 
                     {
                         switch (examId)
                         {
-                            case '1':
+                            case "1":
                                 filterResult = from p in db.Finals
-                                               where p.Exam1 == Convert.ToInt32(Data.FilterText)
-                                               select p;
-                                MessageBox.Show("fuck");
-                                break;
-                            case '2':
-                                filterResult = from p in db.Finals
-                                               where p.Exam2 == Convert.ToInt32(Data.FilterText)
+                                               where p.Exam1 == search
                                                select p;
                                 break;
-                            case '3':
+                            case "2":
                                 filterResult = from p in db.Finals
-                                               where p.Exam3 == Convert.ToInt32(Data.FilterText)
+                                               where p.Exam2 == search
                                                select p;
                                 break;
-                            case '4':
+                            case "3":
                                 filterResult = from p in db.Finals
-                                               where p.Exam4 == Convert.ToInt32(Data.FilterText)
+                                               where p.Exam3 == search
                                                select p;
                                 break;
-                            case '5':
+                            case "4":
                                 filterResult = from p in db.Finals
-                                               where p.Exam5 == Convert.ToInt32(Data.FilterText)
+                                               where p.Exam4 == search
+                                               select p;
+                                break;
+                            case "5":
+                                filterResult = from p in db.Finals
+                                               where p.Exam5 == search
                                                select p;
                                 break;
                         } 
@@ -166,29 +165,29 @@ namespace PracticalWork18
                     {
                         switch (examId)
                         {
-                            case '1':
+                            case "1":
                                 filterResult = from p in db.Finals
-                                               where p.Exam1 > Convert.ToInt32(Data.FilterText)
+                                               where p.Exam1 > search
                                                select p;
                                 break;
-                            case '2':
+                            case "2":
                                 filterResult = from p in db.Finals
-                                               where p.Exam2 > Convert.ToInt32(Data.FilterText)
+                                               where p.Exam2 > search
                                                select p;
                                 break;
-                            case '3':
+                            case "3":
                                 filterResult = from p in db.Finals
-                                               where p.Exam3 > Convert.ToInt32(Data.FilterText)
+                                               where p.Exam3 > search
                                                select p;
                                 break;
-                            case '4':
+                            case "4":
                                 filterResult = from p in db.Finals
-                                               where p.Exam4 > Convert.ToInt32(Data.FilterText)
+                                               where p.Exam4 > search
                                                select p;
                                 break;
-                            case '5':
+                            case "5":
                                 filterResult = from p in db.Finals
-                                               where p.Exam5 > Convert.ToInt32(Data.FilterText)
+                                               where p.Exam5 > search
                                                select p;
                                 break;
                         }
@@ -196,29 +195,29 @@ namespace PracticalWork18
                     else
                         switch (examId)
                         {
-                            case '1':
+                            case "1":
                                 filterResult = from p in db.Finals
-                                               where p.Exam1 > Convert.ToInt32(Data.FilterText)
+                                               where p.Exam1 > search
                                                select p;
                                 break;
-                            case '2':
+                            case "2":
                                 filterResult = from p in db.Finals
-                                               where p.Exam2 > Convert.ToInt32(Data.FilterText)
+                                               where p.Exam2 > search
                                                select p;
                                 break;
-                            case '3':
+                            case "3":
                                 filterResult = from p in db.Finals
-                                               where p.Exam3 > Convert.ToInt32(Data.FilterText)
+                                               where p.Exam3 > search
                                                select p;
                                 break;
-                            case '4':
+                            case "4":
                                 filterResult = from p in db.Finals
-                                               where p.Exam4 > Convert.ToInt32(Data.FilterText)
+                                               where p.Exam4 > search
                                                select p;
                                 break;
-                            case '5':
+                            case "5":
                                 filterResult = from p in db.Finals
-                                               where p.Exam5 > Convert.ToInt32(Data.FilterText)
+                                               where p.Exam5 > search
                                                select p;
                                 break;
                         }
